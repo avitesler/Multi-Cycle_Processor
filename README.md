@@ -28,6 +28,8 @@ The architecture separates the control path from the data path, ensuring modular
 
 <img width="461" height="164" alt="Block Diagram" src="https://github.com/user-attachments/assets/c8779ce2-9414-4531-8f09-d5c761c9482a" />
 
+<img width="750" height="500" alt="Processor Schematic" src="https://github.com/user-attachments/assets/ec050f50-ad60-4f38-a1aa-3b29e2208de2" />
+
 ### Module Descriptions & Datapath
 * `processor_top`: The top-level entity routing physical FPGA pins (Switches, Keys, LEDs) directly to the processor core.
 * `regn` & `dec3to8`: Reusable synchronous register modules and 3-to-8 decoders for dynamic register addressing.
