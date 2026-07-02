@@ -58,11 +58,11 @@ Instead of basic operational checks, the testbench achieves **100% register cove
 
 📁 **Simulation Waveforms:**
 All detailed waveform captures showcasing the custom instruction executions and state cycle progressions can be found in the dedicated simulations folder: 
-[Click here to view the simulation screenshots](./docs/simulations)
+[Click here to view the simulation screenshots](https://github.com/avitesler/Multi-Cycle_Processor/tree/main/Multi-Cycle_Processor/docs/simulations)
 
 📝 **Full Verification Plan:**
 The complete verification methodology and test plan document is available here:
-[Click here to view the Test Plan](./docs/Verification_Test_Plan.pdf)
+[Click here to view the Test Plan](https://github.com/avitesler/Multi-Cycle_Processor/blob/main/Multi-Cycle_Processor/docs/%E2%80%8F%E2%80%8FVerification%20Test%20Plan.pdf)
 
 ---
 
