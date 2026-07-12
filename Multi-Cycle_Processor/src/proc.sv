@@ -10,13 +10,7 @@ module proc (
     // FSM State Definitions
     typedef enum  logic [1:0] {T0=2'b00, T1=2'b01, T2=2'b10, T3=2'b11} t_state;    
     t_state Tstep_Q, Tstep_D;
-    
-	 
-	 // ==========================================
-    // TODO: declare variables 
-    // ==========================================
-	 
-	 
+
     // Control Signals Declarations
     logic [7:0] Rin;       // Register write enables
     logic [7:0] Rout;      // Register read enables to BusWires
@@ -49,10 +43,6 @@ module proc (
     // Control FSM state table (Next State Logic)
     always_comb begin
         unique case (Tstep_Q)
-              // ==========================================
-            // TODO: Complete FSM implementation
-            // ==========================================
-            
             T0: begin 
                 if (!Run) Tstep_D = T0; // Wait for Run signal
                 else      Tstep_D = T1; // Proceed to execution
@@ -75,9 +65,6 @@ module proc (
 
     // Control FSM outputs (Combinational Control Logic)
     always_comb begin
-        // ==========================================
-        // TODO: specify initial values 
-        // ==========================================
         // Default values to prevent unintended latches
           IRin = 1'b0;
           Rin = 8'b0;
@@ -96,9 +83,6 @@ module proc (
             
             T1: begin // Define signals in time step 1
                 unique case (I)
-                    // ==========================================
-                    // TODO: Complete instruction decoding for T1
-                    // ==========================================
                           3'b000: begin // move (Rx <- Ry)
                                 Rout = Yreg; // Place Ry on the bus
                                 Rin = Xreg;  // Write bus to Rx
@@ -132,9 +116,6 @@ module proc (
             
             T2: begin // Define signals in time step 2
                 unique case (I)
-                    // ==========================================
-                    // TODO: Complete instruction decoding for T2
-                    // ==========================================
                             3'b010: begin // add (Setup: G <- A + Ry)
                                 Rout = Yreg; // Place Ry on the bus
                                 G_in = 1'b1; // Store addition result in G
@@ -159,9 +140,6 @@ module proc (
             
             T3: begin // Define signals in time step 3
                 unique case (I)
-                    // ==========================================
-                    // TODO: Complete instruction decoding for T3
-                    // ==========================================
                           3'b010: begin // add (Writeback: Rx <- G)
                                 G_out = 1'b1; // Place G on the bus
                                 Rin = Xreg;   // Write bus to Rx
@@ -181,9 +159,6 @@ module proc (
     // Control FSM flip-flops (State Register with Async Reset)
     always_ff @(posedge Clock or negedge Resetn) begin
         if (!Resetn) begin
-            // ==========================================
-            // TODO: Reset FSM FF implementation
-            // ==========================================
                 Tstep_Q <= T0;
         end else begin
             Tstep_Q <= Tstep_D;
